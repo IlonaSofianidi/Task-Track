@@ -66,6 +66,13 @@ kotlin {
             implementation(libs.androidx.lifecycle.viewmodel.compose)
             implementation(libs.androidx.navigation.compose)
         }
+        val commonTest by getting {
+            dependencies {
+                implementation(kotlin("test"))
+                implementation(libs.turbine)
+                implementation(libs.kotlinCoroutineTest)
+            }
+        }
     }
 }
 
