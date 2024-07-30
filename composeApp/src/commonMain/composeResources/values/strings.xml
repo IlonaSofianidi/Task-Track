@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">TaskTrack</string>
+    <string name="add_task">Add Task</string>
+
+    <string name="choose_subtasks">Choose Subtasks</string>
+
+    <string name="cancel">Cancel</string>
+    <string name="next">Next</string>
+
+    <string name="choose_pickup_date">Choose Pickup Date</string>
+    <string name="submission_summary">Submission Summary</string>
+    <string name="submit">Submit</string>
+    <string name="task">Task</string>
+    <string name="subtask">Subtask</string>
+    <string name="pickup_date">Pickup date</string>
+
+    <string name="new_submission">New Submission</string>
+    <string name="submission_details">Task: %1$s \nSubtask: %2$s \nPickup date: %3$s \n\nThank you!</string>
+    <string name="back_button">Back</string>
+</resources>
