@@ -27,6 +27,7 @@ import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import org.jetbrains.compose.resources.StringResource
 import org.jetbrains.compose.resources.stringResource
+import org.lemb.tasktrack.data.platform
 import org.lemb.tasktrack.ui.SelectOptionScreen
 import org.lemb.tasktrack.ui.StartTaskScreen
 import org.lemb.tasktrack.ui.TaskSubmissionSummaryScreen
@@ -68,6 +69,9 @@ fun TaskTrackAppBar(
                     )
                 }
             }
+        },
+        actions = {
+            Text(text = platform().name)
         }
     )
 }
