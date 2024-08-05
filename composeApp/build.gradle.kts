@@ -54,7 +54,6 @@ kotlin {
         }
         commonMain.dependencies {
             implementation(project(":shared"))
-
             implementation(libs.kotlinx.datetime)
 
             implementation(compose.foundation)
@@ -67,7 +66,6 @@ kotlin {
             implementation(libs.androidx.navigation.compose)
 
             implementation(libs.koinCore)
-            implementation(libs.koinComposeMultiplatform)
         }
     }
 }

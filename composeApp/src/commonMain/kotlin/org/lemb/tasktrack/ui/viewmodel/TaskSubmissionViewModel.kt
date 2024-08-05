@@ -13,7 +13,7 @@ import kotlinx.datetime.TimeZone
 import kotlinx.datetime.plus
 import kotlinx.datetime.toLocalDateTime
 import org.koin.core.component.KoinComponent
-import org.koin.core.component.get
+import org.koin.core.component.inject
 import org.lemb.tasktrack.data.TaskSubmissionUiState
 import org.lemb.tasktrack.usecase.GetSubtasksUseCase
 import org.lemb.tasktrack.usecase.GetTasksUseCase
@@ -22,8 +22,8 @@ import org.lemb.tasktrack.usecase.GetTasksUseCase
 //TODO() ADD multiplatform view model koin injection
 class TaskSubmissionViewModel : ViewModel(), KoinComponent {
 
-    private val getTasksUseCase: GetTasksUseCase = get()
-    private val getSubtasksUseCase: GetSubtasksUseCase = get()
+    private val getTasksUseCase: GetTasksUseCase by inject()
+    private val getSubtasksUseCase: GetSubtasksUseCase by inject()
 
     private val _uiState = MutableStateFlow(TaskSubmissionUiState(pickupOptions = pickupOptions()))
     val uiState: StateFlow<TaskSubmissionUiState> = _uiState.asStateFlow()

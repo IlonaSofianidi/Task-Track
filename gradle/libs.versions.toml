@@ -17,11 +17,11 @@ androidx-test-ext-junit = "1.2.1"
 espresso-core = "3.6.0"
 appcompat = "1.7.0"
 material = "1.12.0"
+coroutinesCore = "1.8.1"
 
 # DI
-koinVersion = "3.6.0-Beta4"
-koinComposeMultiplatformVersion = "1.0.4"
-koinComposeMultiplatformViewModelVersion = "1.2.0-Beta4"
+koinVersion = "3.6.0-wasm-alpha2"
+koinComposeMultiplatformVersion = "1.2.0-Beta4"
 
 [libraries]
 kotlin-test = { module = "org.jetbrains.kotlin:kotlin-test", version.ref = "kotlin" }
@@ -39,6 +39,8 @@ androidx-test-ext-junit = { group = "androidx.test.ext", name = "junit", version
 espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espresso-core" }
 appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
 material = { group = "com.google.android.material", name = "material", version.ref = "material" }
+coroutinesCore = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "coroutinesCore" }
+touchlabCollections = "co.touchlab:stately-concurrent-collections:2.0.6"
 
 # Koin
 koinCore = { module = "io.insert-koin:koin-core", version.ref = "koinVersion" }
