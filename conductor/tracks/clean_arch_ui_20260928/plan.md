@@ -4,18 +4,18 @@ This plan details the tasks required to establish a robust Clean Architecture fo
 
 ## Phase 1: Domain & Data Clean Architecture Foundation
 
-- [ ] Task: Define Rich Task Domain Entities and Repository Interfaces
-    - [ ] Write unit tests for domain entity validations and transformations in shared commonTest
-    - [ ] Implement Task, Subtask, TaskStatus, and TaskPriority models and TaskRepository interface in shared domain package
-- [ ] Task: Implement In-Memory Task Repository and Data Mapping
-    - [ ] Write unit tests for In-Memory TaskRepository CRUD and Flow emissions using Turbine
-    - [ ] Implement InMemoryTaskRepository with realistic sample data and thread-safe mutation in shared data package
-- [ ] Task: Implement Domain Use Cases
-    - [ ] Write unit tests for GetTasksUseCase, UpdateTaskStatusUseCase, and SaveTaskUseCase using Turbine
-    - [ ] Implement GetTasksUseCase, UpdateTaskStatusUseCase, and SaveTaskUseCase in shared usecase package
-- [ ] Task: Configure Koin Dependency Injection Modules
-    - [ ] Write unit tests verifying Koin module dependency injection graph
-    - [ ] Update RepositoryModule and UseCaseModule in shared di package to bind new repositories and use cases
+- [x] Task: Define Rich Task Domain Entities and Repository Interfaces
+    - [x] Write unit tests for domain entity validations and transformations in shared commonTest
+    - [x] Implement Task, Subtask, TaskStatus, and TaskPriority models and TaskRepository interface in shared domain package
+- [x] Task: Implement In-Memory Task Repository and Data Mapping
+    - [x] Write unit tests for In-Memory TaskRepository CRUD and Flow emissions using Turbine
+    - [x] Implement InMemoryTaskRepository with realistic sample data and thread-safe mutation in shared data package
+- [x] Task: Implement Domain Use Cases
+    - [x] Write unit tests for GetTasksUseCase, UpdateTaskStatusUseCase, and SaveTaskUseCase using Turbine
+    - [x] Implement GetTasksUseCase, UpdateTaskStatusUseCase, and SaveTaskUseCase in shared usecase package
+- [x] Task: Configure Koin Dependency Injection Modules
+    - [x] Write unit tests verifying Koin module dependency injection graph
+    - [x] Update RepositoryModule and UseCaseModule in shared di package to bind new repositories and use cases
 - [ ] Task: Conductor - User Manual Verification 'Phase 1: Domain & Data Clean Architecture Foundation' (Protocol in workflow.md)
 
 ## Phase 2: Modular Compose Multiplatform Task Components

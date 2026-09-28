@@ -4,5 +4,5 @@ This file tracks all major tracks for the project. Each track has its own detail
 
 ---
 
-- [ ] **Track: Establish Clean Architecture foundation and modular Compose Multiplatform task components**
+- [~] **Track: Establish Clean Architecture foundation and modular Compose Multiplatform task components**
   *Link: [./tracks/clean_arch_ui_20260928/](./tracks/clean_arch_ui_20260928/)*
