@@ -44,3 +44,4 @@ gen/
 
 # Gradle files
 build/
+.kotlin/
