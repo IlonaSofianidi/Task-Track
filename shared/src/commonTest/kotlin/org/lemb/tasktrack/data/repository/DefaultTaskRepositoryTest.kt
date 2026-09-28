@@ -13,13 +13,17 @@ import kotlin.test.assertNotNull
 import kotlin.test.assertNull
 import kotlin.test.assertTrue
 
-class InMemoryTaskRepositoryTest {
+import org.lemb.tasktrack.data.source.local.LocalTaskDataSource
 
-    private lateinit var repository: InMemoryTaskRepository
+class DefaultTaskRepositoryTest {
+
+    private lateinit var repository: DefaultTaskRepository
+    private lateinit var localDataSource: LocalTaskDataSource
 
     @BeforeTest
     fun setUp() {
-        repository = InMemoryTaskRepository()
+        localDataSource = LocalTaskDataSource()
+        repository = DefaultTaskRepository(localDataSource)
     }
 
     @Test
