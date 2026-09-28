@@ -1,8 +1,0 @@
-{
-  "track_id": "clean_arch_ui_20260928",
-  "type": "feature",
-  "status": "new",
-  "created_at": "2026-09-28T21:33:00Z",
-  "updated_at": "2026-09-28T21:33:00Z",
-  "description": "Establish Clean Architecture foundation and modular Compose Multiplatform task components"
-}
