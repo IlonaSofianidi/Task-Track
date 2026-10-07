@@ -12,36 +12,27 @@ import kotlinx.datetime.DateTimeUnit
 import kotlinx.datetime.TimeZone
 import kotlinx.datetime.plus
 import kotlinx.datetime.toLocalDateTime
-import org.koin.core.component.KoinComponent
-import org.koin.core.component.inject
 import org.lemb.tasktrack.data.TaskSubmissionUiState
-import org.lemb.tasktrack.usecase.GetSubtasksUseCase
-import org.lemb.tasktrack.usecase.GetTasksUseCase
+import org.lemb.tasktrack.domain.model.Task
+import org.lemb.tasktrack.domain.usecase.GetTasksUseCase
 
-
-//TODO() ADD multiplatform view model koin injection
-class TaskSubmissionViewModel : ViewModel(), KoinComponent {
-
-    private val getTasksUseCase: GetTasksUseCase by inject()
-    private val getSubtasksUseCase: GetSubtasksUseCase by inject()
+class TaskSubmissionViewModel(
+    private val getTasksUseCase: GetTasksUseCase
+) : ViewModel() {
 
     private val _uiState = MutableStateFlow(TaskSubmissionUiState(pickupOptions = pickupOptions()))
     val uiState: StateFlow<TaskSubmissionUiState> = _uiState.asStateFlow()
 
+    private var currentTasks: List<Task> = emptyList()
+
     init {
         viewModelScope.launch {
-            getTasksUseCase.invoke().collect { tasks ->
+            getTasksUseCase().collect { tasks ->
+                currentTasks = tasks
                 _uiState.update { currentState ->
                     currentState.copy(
-                        availableTasksOptions = tasks
-                    )
-                }
-            }
-
-            getSubtasksUseCase.invoke().collect { subtasks ->
-                _uiState.update { currentState ->
-                    currentState.copy(
-                        subtasksOptions = subtasks
+                        availableTasksOptions = tasks.map { it.title },
+                        subtasksOptions = tasks.flatMap { it.subtasks.map { subtask -> subtask.title } }
                     )
                 }
             }
@@ -49,9 +40,12 @@ class TaskSubmissionViewModel : ViewModel(), KoinComponent {
     }
 
     fun setAvailableTask(availableTask: String) {
+        val selectedTask = currentTasks.find { it.title == availableTask }
+        val subtaskOptions = selectedTask?.subtasks?.map { it.title } ?: emptyList()
         _uiState.update { currentState ->
             currentState.copy(
-                task = availableTask
+                task = availableTask,
+                subtasksOptions = if (subtaskOptions.isNotEmpty()) subtaskOptions else currentState.subtasksOptions
             )
         }
     }
@@ -77,7 +71,6 @@ class TaskSubmissionViewModel : ViewModel(), KoinComponent {
             )
         }
     }
-
 
     private fun pickupOptions(): List<String> {
         val dateOptions = mutableListOf<String>()

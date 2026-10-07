@@ -66,6 +66,16 @@ kotlin {
             implementation(libs.androidx.navigation.compose)
 
             implementation(libs.koinCore)
+            implementation(libs.koinComposeMultiplatform)
+            implementation(libs.koinComposeViewModel)
+        }
+
+        val commonTest by getting {
+            dependencies {
+                implementation(kotlin("test"))
+                implementation(libs.turbine)
+                implementation(libs.kotlinCoroutineTest)
+            }
         }
     }
 }

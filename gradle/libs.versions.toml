@@ -45,6 +45,7 @@ touchlabCollections = "co.touchlab:stately-concurrent-collections:2.0.6"
 # Koin
 koinCore = { module = "io.insert-koin:koin-core", version.ref = "koinVersion" }
 koinComposeMultiplatform = { module = "io.insert-koin:koin-compose", version.ref = "koinComposeMultiplatformVersion" }
+koinComposeViewModel = { module = "io.insert-koin:koin-compose-viewmodel", version.ref = "koinComposeMultiplatformVersion" }
 koinAndroid = { module = "io.insert-koin:koin-android", version.ref = "koinVersion" }
 
 # Testing

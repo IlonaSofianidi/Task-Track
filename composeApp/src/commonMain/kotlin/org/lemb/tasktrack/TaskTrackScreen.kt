@@ -19,7 +19,7 @@ import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import androidx.lifecycle.viewmodel.compose.viewModel
+import org.koin.compose.viewmodel.koinViewModel
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
@@ -78,7 +78,7 @@ fun TaskTrackAppBar(
 
 @Composable
 fun TaskTrackApp(
-        viewModel: TaskSubmissionViewModel = viewModel { TaskSubmissionViewModel() },
+        viewModel: TaskSubmissionViewModel = koinViewModel(),
         navController: NavHostController = rememberNavController()
 ) {
     // Get current back stack entry

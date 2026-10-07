@@ -14,7 +14,7 @@
 - **Architecture Pattern:** Clean Architecture with Unidirectional Data Flow (UDF) and Model-View-ViewModel (MVVM).
   - `shared`: Domain models, use cases, repository contracts, and data sources.
   - `composeApp`: UI presentation, modular screen composables, ViewModels, and navigation.
-- **Dependency Injection:** Koin (`koin-core` v3.6.0, `koin-compose` v1.2.0, `koin-android` v3.6.0) for modular dependency provision.
+- **Dependency Injection:** Koin (`koin-core` v3.6.0, `koin-compose` v1.2.0, `koin-compose-viewmodel` v1.2.0, `koin-android` v3.6.0) for modular dependency provision.
 
 ## 4. Asynchronous & Concurrency
 - **Kotlin Coroutines (`kotlinx-coroutines-core` v1.8.1):** Structured concurrency for background tasks and asynchronous operations.

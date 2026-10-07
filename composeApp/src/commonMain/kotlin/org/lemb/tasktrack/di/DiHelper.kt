@@ -9,7 +9,7 @@ fun initKoin(appDeclaration: KoinAppDeclaration = {}): KoinApplication {
     return startKoin {
         appDeclaration()
         modules(
-            coreModule()
+            coreModule() + listOf(viewModelModule)
         )
     }
 }
